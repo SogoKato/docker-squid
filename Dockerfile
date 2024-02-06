@@ -1,14 +1,12 @@
-FROM ubuntu:bionic-20190612
-LABEL maintainer="sameer@damagehead.com"
+FROM alpine:3.19.1
+LABEL maintainer="sogokato@outlook.com"
 
-ENV SQUID_VERSION=3.5.27 \
+ENV SQUID_VERSION=6.6-r0 \
     SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_LOG_DIR=/var/log/squid \
-    SQUID_USER=proxy
+    SQUID_USER=squid
 
-RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y squid=${SQUID_VERSION}* \
- && rm -rf /var/lib/apt/lists/*
+RUN apk add squid=${SQUID_VERSION} --update
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
