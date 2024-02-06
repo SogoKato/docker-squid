@@ -44,7 +44,7 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Built images are available on [Dockerhub](https://hub.docker.com/r/noroch/squid) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/noroch/squid) and is the recommended method of installation.
 
 ```bash
 docker pull noroch/squid:6.6
@@ -53,7 +53,7 @@ docker pull noroch/squid:6.6
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t noroch/squid github.com/sameersbn/docker-squid
+docker build -t noroch/squid github.com/SogoKato/docker-squid
 ```
 
 ## Quickstart
